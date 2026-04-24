@@ -1,5 +1,8 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 /* VARIABLES (CLAVE PARA CONSISTENCIA) */
 :root {
     --gold: #c5a059;
@@ -9,230 +12,235 @@
     --text-gray: #bfbfbf;
 }
 
-/* BASE */
-body { 
-    background-color: var(--bg-black); 
-    color: white; 
-    font-family: 'Montserrat', sans-serif; 
-    scroll-behavior: smooth;
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    border-bottom: 1px solid #d4af3722;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-ch {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    padding: 6px 12px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(212,175,55,0.2);
+    
+}
+
+.logo-text {
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.logo-text b {
+    color: #d4af37;
 }
 
 /* HERO */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), 
-                url('./fondopagina.jpeg') center/cover no-repeat;
     height: 100vh;
+    background: url("./FONDOPREMIUM.png") center/cover no-repeat;
+    position: relative;
+}
+
+.overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), #000);
+    backdrop-filter: blur(2px);
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 20px;
 }
 
-/* TEXTOS */
-.pre-title { 
-    color: var(--gold); 
-    letter-spacing: 4px; 
-    font-size: 13px; 
-    margin-bottom: 20px; 
-    font-weight: bold; 
+.pre-title {
+    color: #caa55b;
+    letter-spacing: 3px;
+    font-size: 12px;
+    margin-bottom: 15px;
 }
 
-h1 { 
-    font-family: 'Playfair Display', serif; 
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    line-height: 1.1; 
-    margin-bottom: 20px; 
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
 }
 
-.white-text { color: #fff; }
-
-.gold-italic { 
-    color: var(--gold); 
-    font-style: italic; 
-    font-family: 'Playfair Display', serif; 
+.gold-italic {
+    color: #d4af37;
+    font-style: italic;
+    margin-left: 10px;
 }
 
-.tagline { 
-    font-size: 18px; 
-    max-width: 700px; 
-    color: #d1d1d1; /* gris elegante */
-    margin-bottom: 30px; 
-    font-weight: 300; 
-    font-family: 'Playfair Display', serif; /* tipografía más premium */
-    letter-spacing: 0.5px;
+.tagline {
+    margin-top: 15px;
+    color: #ccc;
 }
 
-/* BOTÓN PRINCIPAL */
+/* BOTÓN PRO */
 .btn-main {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    line-height: 1;
-
-
-    width: auto;
-    margin: 0 auto;
-
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: black;
-
-    padding: 14px 28px; /* 👈 más compacto */
-    text-decoration: none;
-
+    margin-top: 25px;
+    padding: 15px 35px;
+    background: linear-gradient(135deg, #d4af37, #a87d1a);
+    color: #000;
+    border-radius: 8px;
     font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 14px;
-
-    border-radius: 6px;
-    transition: all 0.3s ease;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 0 15px rgba(212,175,55,0.3);
 }
 
 .btn-main:hover {
-    box-shadow: 0 0 30px rgba(197, 160, 89, 0.7);
-    transform: translateY(-3px);
+    transform: scale(1.07);
+    box-shadow: 0 0 25px rgba(212,175,55,0.6);
 }
 
-/* SECCIÓN FEATURES */
+/* TELEGRAM */
+.telegram-icon svg {
+    width: 18px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.note {
+    margin-top: 20px;
+    color: #aaa;
+}
+
+/* FEATURES */
 .features {
     display: flex;
     justify-content: center;
     gap: 30px;
-    padding: 100px 20px;
+    padding: 80px 20px;
     flex-wrap: wrap;
 }
 
 .feature-box {
-    background: #111;
-    padding: 40px;
-    max-width: 300px;
-    text-align: center;
-    border: 1px solid rgba(197,160,89,0.1);
-    transition: all 0.3s ease;
+    background: #0b0b0b;
+    border: 1px solid rgba(212,175,55,0.2);
+    padding: 30px;
+    width: 260px;
+    border-radius: 12px;
+    transition: 0.3s;
+    text-align: center; /* 🔥 CENTRA TODO */
 }
-
-.feature-box:hover {
-    border-color: var(--gold);
-    transform: translateY(-5px);
-}
-
 .feature-box h3 {
-    margin: 20px 0;
-    font-family: 'Playfair Display', serif;
+    margin-top: 10px;
+    margin-bottom: 8px;
 }
 
 .feature-box p {
-    color: var(--text-gray);
+    color: #aaa;
     font-size: 14px;
 }
 
+.feature-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px rgba(212,175,55,0.2);
+}
+
 /* CHECKOUT */
-.checkout-container { 
-    background-color: var(--bg-black); 
-    padding: 120px 20px; 
-    display: flex; 
-    justify-content: center; 
+.checkout-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
 }
 
 .checkout-box {
-    background: var(--bg-dark);
-    padding: 50px;
-    border-radius: 10px;
-    border: 1px solid rgba(197,160,89,0.2);
-    width: 100%;
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-}
-
-/* TITULOS */
-.panel-title { 
-    font-family: 'Playfair Display', serif; 
-    font-size: 38px; 
-    margin-bottom: 15px; 
+    background: #0b0b0b;
+    border: 1px solid rgba(212,175,55,0.3);
+    padding: 40px;
+    width: 600px;
     text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
 }
 
-.panel-subtitle { 
-    color: var(--text-gray); 
-    margin-bottom: 40px; 
-    text-align: center;
+/* CORONA */
+.crown {
+    font-size: 28px;
+    margin-bottom: 10px;
 }
 
-.gold-price { 
-    color: var(--gold); 
-    font-weight: bold; 
+/* TEXTO */
+.panel-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
 }
 
-/* INPUTS */
-.input-group { margin-bottom: 25px; }
-
-.input-group label { 
-    display: block; 
-    font-size: 12px; 
-    letter-spacing: 2px; 
-    margin-bottom: 10px; 
-    color: #aaa;
-}
-
-.input-group input {
-    width: 100%;
-    background-color: #111;
-    border: 1px solid rgba(197,160,89,0.3);
-    padding: 15px;
-    color: #fff;
-    outline: none;
-    border-radius: 5px;
-}
-
-/* BOTÓN BASE (SE MANTIENE PARA OTROS USOS) */
-.btn-step-1 {
-    width: 100%;
-}
-
-/* 🔥 BOTÓN CORREGIDO */
-#payBtn {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-
-    width: auto !important;        /* 👈 rompe el 100% */
-    margin: 25px auto 0;
-
-    background: linear-gradient(135deg, #c5a059, #eec373);
-    color: #000;
-    border: none;
-
-    padding: 12px 20px;
+.gold-price {
+    color: #d4af37;
     font-weight: bold;
-    letter-spacing: 1px;
-    font-size: 13px;
-    text-transform: uppercase;
-
-    cursor: pointer;
-    border-radius: 6px;
-    transition: all 0.3s ease;
+}
+/* BENEFICIOS */
+.benefits {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap; /* 🔥 NO SE BAJAN */
+}
+/* ICONOS GENERALES */
+.icon-img {
+    width: 40px;
+    display: block;
+    margin: 0 auto 15px; /* 🔥 CENTRADO PERFECTO */
 }
 
-/* HOVER */
-#payBtn:hover {
-    box-shadow: 0 0 25px rgba(197, 160, 89, 0.6);
-    transform: translateY(-2px);
+.icon-inline {
+    width: 18px;
+    vertical-align: middle;
+    margin-right: 8px;
 }
 
-/* ACTIVE */
-#payBtn:active {
-    transform: scale(0.98);
+/* CORONA */
+.icon-crown {
+    width: 30px;
+    display: block;
+    margin: 0 auto 10px;
 }
 
-/* DISABLED */
-#payBtn:disabled {
-    background: #444;
-    color: #aaa;
-    cursor: not-allowed;
-    box-shadow: none;
+/* BENEFICIOS ICONOS */
+.benefits img {
+    width: 28px; /* 🔥 MÁS GRANDES */
+    height: 28px;
+}
+/* TEXTO BENEFICIOS */
+.benefits span {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* 🔥 separación uniforme */
+    font-size: 14px;
+    white-space: nowrap; /* 🔥 evita que se parta en 2 líneas */
+}
+
+/* CHECKOUT */
+.panel-subtitle {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #ccc;
 }
